@@ -2,10 +2,10 @@ $.getJSON('http://data.cityofchicago.org/resource/8pix-ypme.json', function(lsto
     $('#lstoplist').empty();
 
     $.each(lstops, function(i,lstops){
-        $('#lstopslst').append(generateLStopLink(lstop));
+        $('#lstopslist').append( generateLStopLink(lstops) );
 });
 
-    $('#lstoplist').listvew('refresh');
+    $('#lstopslist').listview('refresh');
 });
 
 function generateLStopLink(lstop){
@@ -20,11 +20,12 @@ function generateLStopLink(lstop){
 }
 function goToStopDetailPage(stopName){
     //create the page html template
-var stopPage = $("<div data-role='page' data-url=station><div data-role='header'><h1>")
+var stopPage = $("<div data-role= 'page' data-url=station><div data-role='header'><h1>"
         + stopName +"</h1></div><div data-role='content'></div><div data-role='footer'><h4>"
-        + stopName + "</h4></div></div>";
+        + stopName + "</h4></div></div>");
+   
     //append the new page to the page container
-    stopPage.appendTo($.mobile.pageContainer );
+    stopPage.appendTo( $.mobile.pageContainer );
     
     //go to the newly created page
     $.mobile.changePage(stopPage);
