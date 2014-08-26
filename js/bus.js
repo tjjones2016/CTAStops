@@ -1,4 +1,4 @@
-$.getJSON('http://data.cityofchicago.org/resource/8pix-ypme.json', function(busstops){
+$.getJSON('js/busstops.json', function(busstops){
     $('#busstopplist').empty();
 
     $.each(busstops, function(i,busstop){
